@@ -1,0 +1,30 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAUNKFCIJHAHTLZ34U
+      secret-key: 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
+    region:
+      static: eu-central-1
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: best-messenger
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 50MB
+      max-request-size: 60MB
+
+server:
+  port: 3000
+
+springdoc:
+  swagger-ui:
+    path: /asset-service/api/documentation
+
