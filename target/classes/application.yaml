@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: asset-service
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 50MB
+      max-request-size: 60MB
+
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAUNKFCIJHAHTLZ34U
+      secret-key: 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
+    region:
+      static: eu-central-1
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: best-messenger
+
+server:
+  port: 3000
+
+springdoc:
+  packages-to-scan: com.messenger.assetservice
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+    health:
+      show-details: always
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  endpoints:
+    web:
+      exposure:
+        include: "*"
